@@ -78,9 +78,10 @@
         <div id="intro_target" style="position: relative; top: -50px;"></div>
         <div id="intro">
             <h2><a class="subtitle">Brief Overview</a></h2>
-            <p>In this work, we address the challenge of efficiently compressing microphone array recorded audio while maintaining crucial spatial cues. We propose a neural spatial audio coding framework that achieves high compression ratios, leveraging both single channel sub-band and spatial codec. Our approach encompasses two phases: first, a neural sub-band codec is designed to encode the reference channel with small bit rates, and second, a SpatialCodec captures relative spatial information for accurate multichannel reconstruction at the decoder end. We also propose a few novel evaluation metrics in our framework to measure how well the spatial cues are preserved. This project pioneers the application of neural networks to multi-microphone speech coding, demonstrating decent performance. The introduced framework holds vast potential across diverse domains including telecommunication and immersive audio systems, likely motivating further exploration in this research area through our framework. We train and evaluate our framework on synthesized reverberated speech, which contains rich spatial information.</p>
-            <p>Figure 1 below shows our double branch framework. The first branch codes a reference channel audio while the second branch codes the spatial information. Assume we want to code M channels. The first branch takes the reference channel audio's STFT, encode it, and then reconstruct the STFT. It's is trained with single-channel recording using a combination of reconstruction and adversarial loss. The second branch (SpatialCodec) takes both spatial and spectral features (Spatial Covariance Matrix) as input, encode it, and then reconstruct (M-1) complex ratio filter. The filter is applied on the first branch's output STFT to reconstruct is trained wtih pure snr loss. (M-1) channel STFT. These (M-1) channels and the first branch's output together gives a M channel reconstruction. The second branch is trained with SNR loss while assuming the original reference channel audio is available on the decoder side. However, in inference, the second branch's complex ratio filter is applied on the reconstructed reference channel.</p>
-            <figure>
+            <p>
+                Abstract
+            <p>
+                <figure>
                 <img src="img/overall_framework1.png" style="object-fit:contain;width:1300px;height:350px" class="center" title="Pipeline">
                 <center><figcaption>Figure 1: Our Double Branch Pipline, Training and Inference</figcaption></center>
             </figure>
@@ -100,20 +101,18 @@
                 <table class="audio_demos">
                     <thead>
                         <tr>
-                            <th>Packet loss</th><th>Groundtruth</th><th>OPUS 48kbps + FEC</th><th>FSCodec + FRN</th><th>SpatialSC</th><th>C5</th><th>C6</th><th>C7</th><th>C8</th>
+                            <th>Packet loss</th><th>Groundtruth</th><th>OPUS 48kbps + FEC</th><th>FSCodec + FRN</th><th>SpatialSC</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr style="border-top:1px solid black">
-                            <td><b> Groudtruth</b></td>
+                            <th rowspan="4">10%</th>
+                            
                             <td><audio controls class="audio-player" preload="metadata"><source src="samples/24k_ori_172104_f.wav" type="audio/wav"></audio></td>
                             <td><audio controls class="audio-player" preload="metadata"><source src="samples/24k_ori_177911_f.wav" type="audio/wav"></audio></td>
                             <td><audio controls class="audio-player" preload="metadata"><source src="samples/all_channels/reverb_clean/sample_73_2.wav" type="audio/wav"></audio></td>
                             <td><audio controls class="audio-player" preload="metadata"><source src="samples/all_channels/reverb_clean/sample_73_3.wav" type="audio/wav"></audio></td>
                             <td><audio controls class="audio-player" preload="metadata"><source src="samples/all_channels/reverb_clean/sample_73_4.wav" type="audio/wav"></audio></td>
-                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/all_channels/reverb_clean/sample_73_5.wav" type="audio/wav"></audio></td>
-                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/all_channels/reverb_clean/sample_73_6.wav" type="audio/wav"></audio></td>
-                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/all_channels/reverb_clean/sample_73_7.wav" type="audio/wav"></audio></td>
                         </tr>
                        
                     </tbody>
