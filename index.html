@@ -88,28 +88,6 @@
 
         <div id="clear"></div>
 
-        <!-- Results -->
-        <div id="results_target" style="position: relative; top: -50px;"></div>
-        <div id="results">
-            <h2><a class="subtitle">Results</a></h2>
-            <p align="justify">The methods we evaluate are as follows (we are using M=8 channels):</p>
-            <ul align="justify">
-                <li><b>REVERB CLEAN</b> - Groundtruth multi-channel audio</li>
-                <li><b>OPUS12</b> - 12 kbps per channel</li>
-                <li><b>OPUS6</b> - 6 kbps per channel</li>
-                <li><b>ENCODEC</b> - 6 kbps per channel</li>
-                <li><b>HIFI-CODEC</b> - 6 kbps per channel</li>
-                <li><b>SUB-BAND CODEC (Ours without SpatialCodec)</b> - 6 kbps per channel</li>
-                <li><b>MIMO E2E (OURS)</b> - Blackbox end to end model, 12kbps</li>
-                <li><b>ENCODEC+SPATIALCODEC (OURS)</b> - 6+6=12kbps</li>
-                <li><b>HIFICODEC+SPATIALCODEC (OURS)</b> - 6+6=12kbps</li>
-                <li><b>SUB-BAND CODEC+SPATIALCODEC (OURS)</b> - 6+6=12kbps</li>
-            </ul>
-            <p align="justify">Metrics: DOA ERR, RTF ERR, SPATIAL SIM, BEAM SNR, BEAM PESQ, BEAM SIG, BEAM BAK</p>
-            <center>
-                <img src="img/results.png" style="object-fit:contain;width:1300px;height:500px">
-            </center>
-        </div>
 
         <!-- Audio Demos -->
         <div id="demos_target" style="position: relative; top: -50px;"></div>
@@ -117,14 +95,7 @@
             <h2><a class="subtitle">Audio Demo</a></h2>
             <p align="justify">Here are some audio samples. For each mutli-channel sample, we first demo each channel indepedently. Then we beamform towards the groundtruth DOA and play the beamform results. Last, we show the spatial feature visualization of the sample.</p>
 
-            <!-- ========== Sample 1 ========== -->
-            <h4><b><p style="color:red;font-size:18px;">Sample 1: Spatial Feature Visualization</p></b></h4>
-            <figure>
-                <img src="img/sample_73.png" style="object-fit:contain;width:1500px;height:550px" class="center">
-                <center><figcaption>Figure 2: Spatial Feature Visualization</figcaption></center>
-            </figure>
 
-            <h4><b><p style="color:red;font-size:18px;">Sample 1: All-Channel Outputs</p></b></h4>
             <div class="table-container">
                 <table class="audio_demos">
                     <thead>
@@ -156,44 +127,8 @@
                     </tbody>
                 </table>
             </div>
-
-            <h4><b><p style="color:red;font-size:18px;">Sample 1: Beamforming Outputs</p></b></h4>
-            <div class="table-container">
-                <table class="audio_demos">
-                    <thead><tr><th>Methods</th><th>beamform result</th></tr></thead>
-                    <tbody>
-                        <tr style="border-top:1px solid black"><td><b>Reverberate Clean</b></td><td><audio controls class="audio-player" preload="metadata"><source src="samples/beams/reverb_clean/sample_73.wav"></audio></td></tr>
-                        <tr style="border-top:1px solid black"><td><b>OPUS12</b></td><td><audio controls class="audio-player" preload="metadata"><source src="samples/beams/opus12/sample_73.wav"></audio></td></tr>
-                        <tr style="border-top:1px solid black"><td><b>OPUS6</b></td><td><audio controls class="audio-player" preload="metadata"><source src="samples/beams/opus6/sample_73.wav"></audio></td></tr>
-                        <tr style="border-top:1px solid black"><td><b>ENCODEC</b></td><td><audio controls class="audio-player" preload="metadata"><source src="samples/beams/encodec/sample_73.wav"></audio></td></tr>
-                        <tr style="border-top:1px solid black"><td><b>HIFICODEC</b></td><td><audio controls class="audio-player" preload="metadata"><source src="samples/beams/hificodec/sample_73.wav"></audio></td></tr>
-                        <tr style="border-top:1px solid black"><td><b>SUB-BAND CODEC</b></td><td><audio controls class="audio-player" preload="metadata"><source src="samples/beams/subband_codec/sample_73.wav"></audio></td></tr>
-                        <tr style="border-top:1px solid black"><td><b>MIMO E2E</b></td><td><audio controls class="audio-player" preload="metadata"><source src="samples/beams/mimo_e2e/sample_73.wav"></audio></td></tr>
-                        <tr style="border-top:1px solid black"><td><b>ENCODEC+SpatialCodec</b></td><td><audio controls class="audio-player" preload="metadata"><source src="samples/beams/spatialcodec_encodec/sample_73.wav"></audio></td></tr>
-                        <tr style="border-top:1px solid black"><td><b>HIFICODEC+SpatialCodec</b></td><td><audio controls class="audio-player" preload="metadata"><source src="samples/beams/spatialcodec_hificodec/sample_73.wav"></audio></td></tr>
-                        <tr style="border-top:1px solid black"><td><b>SUB-BAND CODEC +SpatialCodec</b></td><td><audio controls class="audio-player" preload="metadata"><source src="samples/beams/spatialcodec_subbandcodec/sample_73.wav"></audio></td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Sample 2/3/4 结构与Sample1完全一致，直接复用即可 -->
-            <!-- 此处省略Sample2-4代码（与Sample1结构相同，仅替换图片/音频文件名） -->
-
-            <!-- References -->
-            <div id="references_target" style="position: relative; top: -50px;"></div>
-            <div id="references">
-                <h1><a class="subtitle">References</a></h1>
-                <p>[1] Ralph O. Schmidt, “Multiple emitter location and signal parameter estimation,” 1986.</p>
-                <p>[2] Ryan Corey and Andrew Singer, Relative Transfer Function Estimation from Speech Keywords, pp. 238–247, 06 2018.</p>
-            </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <div id="footer">
-        <i>© August 2023 by Zhongweiyang Xu</i>
-    </div>
-
     <!-- Back to Top -->
     <div class="wow fadeIn" data-wow-delay="0.4s">
         <div class="btn-circle-scroll">
