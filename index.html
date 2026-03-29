@@ -109,7 +109,7 @@
         <div id="demos_target" style="position: relative; top: -50px;"></div>
         <div id="demos">
             <h2><a class="subtitle">Audio Demo</a></h2>
-            <p align="justify">Here are some audio samples. For each mutli-channel sample, we first demo each channel indepedently. Then we beamform towards the groundtruth DOA and play the beamform results. Last, we show the spatial feature visualization of the sample.</p>
+            <p align="justify">Here are some reconstructed spatial speech samples under different packet loss. </p>
 
 
             <div class="table-container">
@@ -126,23 +126,52 @@
                     <tbody>
                         <tr style="border-top:1px solid black">
                             <th rowspan="4">10%</th>
-                            
                             <td><audio controls class="audio-player" preload="metadata"><source src="samples/24k_ori_172104_f.wav" type="audio/wav"></audio></td>
-                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/opus_speech_loss10_172104.wav" type="audio/wav"></audio></td>
-                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/frn_loss10_172104.wav" type="audio/wav"></audio></td>
-                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/our_loss10_172104.wav" type="audio/wav"></audio></td>
-                            
+                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/opus_speech_loss10_172104_f.wav" type="audio/wav"></audio></td>
+                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/frn_loss10_172104_f.wav" type="audio/wav"></audio></td>
+                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/our_loss10_172104_f.wav" type="audio/wav"></audio></td>
                         </tr>
                         <tr style="border-top:1px solid black">                           
-                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/24k_ori_172104_f.wav" type="audio/wav"></audio></td>
-                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/24k_ori_177911_f.wav" type="audio/wav"></audio></td>
-                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/all_channels/reverb_clean/sample_73_2.wav" type="audio/wav"></audio></td>
-                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/all_channels/reverb_clean/sample_73_3.wav" type="audio/wav"></audio></td>
+                           <td><audio controls class="audio-player" preload="metadata"><source src="samples/24k_ori_177911_f.wav" type="audio/wav"></audio></td>
+                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/opus_speech_loss10_177911.wav" type="audio/wav"></audio></td>
+                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/frn_loss10_177911.wav" type="audio/wav"></audio></td>
+                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/our_loss10_177911_.wav" type="audio/wav"></audio></td>
                         </tr>
                        
                     </tbody>
                 </table>
             </div>
+            
+            <div class="table-container">
+                <table class="audio_demos">
+                    <thead>
+                        <tr>
+                            <th> Packet loss</th>
+                            <th>Groundtruth</th>
+                            <th >OPUS 48kbps + FEC</th>
+                            <th>FSCodec + FRN</th>
+                            <th>SpatialSC</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-top:1px solid black">
+                            <th rowspan="4">30%</th>
+                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/24k_ori_172104_f.wav" type="audio/wav"></audio></td>
+                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/opus_speech_loss10_172104_f.wav" type="audio/wav"></audio></td>
+                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/frn_loss10_172104_f.wav" type="audio/wav"></audio></td>
+                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/our_loss10_172104_f.wav" type="audio/wav"></audio></td>
+                        </tr>
+                        <tr style="border-top:1px solid black">                           
+                           <td><audio controls class="audio-player" preload="metadata"><source src="samples/24k_ori_177911_f.wav" type="audio/wav"></audio></td>
+                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/opus_speech_loss10_177911.wav" type="audio/wav"></audio></td>
+                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/frn_loss10_177911.wav" type="audio/wav"></audio></td>
+                            <td><audio controls class="audio-player" preload="metadata"><source src="samples/our_loss10_177911_.wav" type="audio/wav"></audio></td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            
         </div>
     </div>
     <!-- Back to Top -->
