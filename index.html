@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="description" content="SpatialSC Demos">
     <meta name="author" content="">
-    <title>SpatialSC: Spatial Audio Semantic Communication for Immersive Experiences under Packet Loss Channel</title>
+    <title>SpatialSC: End-to-End Spatial Audio Semantic Communication for Immersive Experiences</title>
+    
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/bootflat.css">
@@ -96,7 +97,13 @@
         <div id="intro">
             <h2><a class="subtitle">Brief Overview</a></h2>
             <p>
-                Abstract
+                The sixth-generation (6G) mobile networks are envisioned to enable transformative immersive communication experiences, which impose stringent requirements on efficient transmission, low latency, and high-fidelity reconstruction for immersive applications. However, conventional bit-level communication paradigms suffer from excessive data redundancy, resulting in inefficient transmission under limited bandwidth resources in wireless communication systems.
+    To overcome these challenges, we propose SpatialSC, a novel end-to-end spatial audio semantic communication framework for immersive scenarios.
+    Specifically, we first propose a multi-channel joint compression frequency-domain semantic coding method for spatial audio, which exploits the spectral characteristics and inter-channel dependencies to remove semantic information and improve compression efficiency. 
+    To further preserve spatial perception, a spatial loss is introduced to enforce spatial fidelity during reconstruction.
+    Furthermore, a lightweight Mamba-based packet loss compensation (PLC) model is employed at the receiver to recover and restore semantic features corrupted by packet losses without introducing additional transmission overhead.
+    Finally, comprehensive experimental results demonstrate that SpatialSC achieves high-fidelity perceptual quality at 9 kbps with a 24 kHz sampling rate, outperforming both traditional and neural-network-based methods under packet loss channels. Meanwhile, it operates with a low latency of approximately 99 ms and real-time capability.
+    These results highlight the effectiveness and practicality of SpatialSC, paving the way for efficient and robust spatial audio transmission in future immersive communication systems.
             <p>
                 <figure>
                 <img src="img/overall_framework1.png" style="object-fit:contain;width:1300px;height:350px" class="center" title="Pipeline">
