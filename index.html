@@ -96,12 +96,13 @@
           <div id="intro_target" style="position: relative; top: -50px;"></div>
         <div id="intro">
             <h2><a class="subtitle">Brief Overview</a></h2>
-            <p>The sixth-generation (6G) mobile networks are envisioned to enable transformative immersive communication experiences, which impose stringent requirements on efficient transmission, low latency, and high-fidelity reconstruction for immersive applications. However, conventional bit-level communication paradigms suffer from excessive data redundancy, resulting in inefficient transmission under limited bandwidth resources in wireless communication systems.
+            <p> The sixth-generation (6G) mobile networks are envisioned to enable transformative immersive communication experiences, which impose stringent requirements on efficient transmission, low latency, and high-fidelity reconstruction for immersive applications.
+    However, conventional bit-level communication paradigms suffer from excessive data redundancy, resulting in inefficient transmission and poor reconstruction quality under limited bandwidth resources in wireless communication systems.
     To overcome these challenges, we propose SpatialSC, a novel end-to-end spatial audio semantic communication framework for immersive scenarios.
-    Specifically, we first propose a multi-channel joint compression frequency-domain semantic coding method for spatial audio, which exploits the spectral characteristics and inter-channel dependencies to remove semantic information and improve compression efficiency. 
-    To further preserve spatial perception, a spatial loss is introduced to enforce spatial fidelity during reconstruction.
+    Specifically, we first propose a frequency-domain multi-channel joint semantic coding method for spatial audio, which exploits the spectral characteristics and inter-channel dependencies to remove semantic redundancy and improve compression efficiency. 
+    To further preserve spatial perception, a spatial consistency loss is introduced to enforce spatial fidelity during reconstruction.
     Furthermore, a lightweight Mamba-based packet loss compensation (PLC) model is employed at the receiver to recover and restore semantic features corrupted by packet losses without introducing additional transmission overhead.
-    Finally, comprehensive experimental results demonstrate that SpatialSC achieves high-fidelity perceptual quality at 9 kbps with a 24 kHz sampling rate, outperforming both traditional and neural-network-based methods under packet loss channels. Meanwhile, it operates with a low latency of approximately 99 ms and real-time capability.
+    Comprehensive experimental evaluations demonstrate that SpatialSC achieves high-fidelity perceptual reconstruction quality at 9 kbps and a 24 kHz sampling rate. Compared with both conventional and neural-network-based methods, SpatialSC outperforms by over 45\% in terms of subjective MUSHRA score under the Gilbert-Elliott channel, while maintaining a low latency of approximately 99 ms and achieving a real-time factor of 0.1.
     These results highlight the effectiveness and practicality of SpatialSC, paving the way for efficient and robust spatial audio transmission in future immersive communication systems. <p>
                 
         </div>
